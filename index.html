@@ -1,6 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    .showcase{
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+    }
+    .refs-prompt{
+      width:28%;
+    }
+    .refs{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-bottom:12px;
+    }
+    .refs img{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:cover;
+      border-radius:10px;
+      display:block;
+    }
+    .prompt-box{
+      font-size:15px;
+      line-height:1.6;
+      text-align:left;
+    }
+    .video-box{
+      width:72%;
+    }
+    .video-box video{
+      width:100%;
+      display:block;
+      border-radius:12px;
+    }
+    .refs > div{
+    aspect-ratio:1/1;
+    background:#f3f3f3;
+    border-radius:10px;
+    }
+    @media (max-width: 768px){
+      .showcase{flex-direction:column;}
+      .refs-prompt,.video-box{width:100%;}
+    }
+  </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -552,46 +597,6 @@
   </div>
 </section>
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
 
 
 
@@ -601,14 +606,29 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
+      <h2 class="title is-3">More Visualization Results</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
+          <div class="showcase">
+            <div class="refs-prompt">
+              <div class="refs">
+                <img src="static/images/ref1-1.jpg" alt="Reference 1">
+                <img src="static/images/ref1-2.jpg" alt="Reference 2">
+                <img src="static/images/ref1-3.jpg" alt="Reference 3">
+              </div>
+        
+              <div class="prompt-box">
+                <strong>Prompt:</strong>
+                a man playing with his dog in front of the house
+              </div>
+            </div>
+        
+            <div class="video-box">
+              <video id="video1" controls muted loop preload="metadata">
+                <source src="static/videos/faceobj_1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
         </div>
         <div class="item item-video2">
           <!-- TODO: Add poster image for better preview -->
